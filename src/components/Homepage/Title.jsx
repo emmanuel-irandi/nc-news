@@ -1,9 +1,9 @@
-function Title (){
+function Title ({topic}){
     return (
       <>
       <h1>
-         Emmanuel's Propaganda 
-        (all fact checked btw.)
+         {topic ? topic : `Emmanuel's Propaganda. 
+          (all fact checked btw)`}
       </h1>
 
       <h2>
