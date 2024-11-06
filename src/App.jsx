@@ -1,34 +1,166 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <HomePage/>
+    {/* <br/>
+    <FilteredPage/>
+    <br/>
+    <ArticlePage/> */}
     </>
+  )
+}
+
+function HomePage (){
+  return (
+    <>
+    <Title/>
+    <DropDownButton/>
+    <ArticleSection/>
+    </>
+  )
+}
+
+function Title (){
+  return (
+    <p>
+      Title
+    </p>
+  )
+}
+
+function DropDownButton (){
+  return (
+    <>
+    <SortByOption/>
+    </>
+  )
+}
+
+function SortByOption (){
+  return (
+    <p>
+      SortByOption
+    </p>
+  )
+}
+
+function ArticleSection (){
+  const [articlesList, setArticlesList] = useState([]);
+  useEffect(()=>{axios.get("https://backend-nc-news-i02g.onrender.com/api/articles")
+    .then((responce)=>{
+      setArticlesList(responce.data.articles)
+    })
+    .catch((err)=>{console.log("my console log from my CATCH.",err)})
+  })
+  return (
+    <>
+    <PostInfo/>
+    {articlesList.map((article)=>{
+      return (
+        <p key={article.article_id}>
+          {article.title}
+          {article.author}
+          <br/>
+          {article.body}
+          {article.created_at}
+          <br/>
+          {article.votes}
+        </p>
+      )
+    })}
+    <CommentsButton/>
+    <UpvoteButton/>
+    </>
+  )
+}
+
+function CommentsButton (){
+  return (
+    <p>
+      CommentsButton
+    </p>
+  )
+}
+
+function PostInfo (){
+  return (
+    <p>
+      PostInfo
+    </p>
+  )
+}
+
+function UpvoteButton (){
+  return (
+    <p>
+      UpvoteButton
+    </p>
+  )
+}
+
+function FilteredPage (){
+  return (
+    <>
+    <Title/>
+    <DropDownButton/>
+    <ArticleSection/>
+    </>
+  )
+}
+
+function ArticlePage () {
+  return (
+    <>
+    <SelectArticle/>
+    <CommentSection/>
+    <CommentBox/>
+    </>
+  )
+}
+
+function SelectArticle (){
+  return (
+    <>
+    <PostInfo/>
+    <UpvoteButton/>
+    </>
+  )
+}
+
+function CommentSection (){
+  return (
+    <>
+    <DeleteButton/>
+    <CommentInfo/>
+    </>
+  )
+}
+
+function DeleteButton (){
+  return (
+    <p>
+      DeleteButton
+    </p>
+  )
+}
+
+function CommentInfo (){
+  return (
+    <p>
+      CommentInfo
+    </p>
+  )
+}
+
+function CommentBox (){
+  return (
+    <p>
+      CommentBox
+    </p>
   )
 }
 
