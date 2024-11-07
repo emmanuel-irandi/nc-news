@@ -19,7 +19,7 @@ function ArticleSection (){
           <div key={article.article_id}>
           <PostInfo article={article}/>
           <CommentsButton/>
-          <UpvoteButton/>
+          <UpvoteButton articleId={article.article_id} votes={article.votes}/>
           </div>
         )
       })}

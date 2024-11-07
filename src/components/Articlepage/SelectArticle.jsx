@@ -20,7 +20,7 @@ function SelectArticle (){
     return (
       <>
       <PostInfo article={selectArticle} linkTitle={false}/>
-      <UpvoteButton/>
+      <UpvoteButton articleId={articleId} votes={selectArticle.votes}/>
       </>
     )
   }
