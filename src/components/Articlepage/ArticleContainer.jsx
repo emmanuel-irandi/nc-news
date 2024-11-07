@@ -12,8 +12,9 @@ function ArticleContainer ({article}) {
     return (
         <>
       <SelectArticle/>
-      <CommentSection/>
+      <hr />
       <CommentBox/>
+      <CommentSection/>
         </>
     )
   }
