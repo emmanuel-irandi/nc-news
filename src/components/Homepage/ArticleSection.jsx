@@ -3,7 +3,6 @@ import PostInfo from "../Articlepage/PostInfo";
 import UpvoteButton from "../Sharedcomps/UpvoteButton";
 import CommentsButton from "./CommentsButton";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 function ArticleSection (){
     const [articlesList, setArticlesList] = useState([]);
@@ -15,26 +14,15 @@ function ArticleSection (){
     })
     return (
       <>
-      <PostInfo/>
       {articlesList.map((article)=>{
         return (
-          <p key={article.article_id}>
-            <br/>
-            <Link to={`article/${article.article_id}`}> 
-            {article.title}
-            </Link>
-            <br/>
-            {article.author}
-            <br/>
-            {article.body}
-            {article.created_at}
-            <br/>
-            {article.votes}
-          </p>
+          <div key={article.article_id}>
+          <PostInfo article={article}/>
+          <CommentsButton/>
+          <UpvoteButton/>
+          </div>
         )
       })}
-      <CommentsButton/>
-      <UpvoteButton/>
       </>
     )
   }

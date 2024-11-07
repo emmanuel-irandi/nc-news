@@ -19,18 +19,7 @@ function SelectArticle (){
     }, [articleId])
     return (
       <>
-      <PostInfo/>
-        <p>
-          <br />
-          {selectArticle.title}
-          <br />
-          {selectArticle.author}
-          <br />
-          {selectArticle.body}
-          {selectArticle.created_at}
-          <br />
-          {selectArticle.votes}
-        </p>
+      <PostInfo article={selectArticle} linkTitle={false}/>
       <UpvoteButton/>
       </>
     )
