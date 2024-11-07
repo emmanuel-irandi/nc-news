@@ -1,8 +1,16 @@
-function CommentInfo (){
+function CommentInfo ({comment}){
     return (
-      <p>
-        CommentInfo
-      </p>
+      <div key={comment.comment_id}>
+      <br/>
+      <h3>{comment.title}</h3>
+      <br/>
+      {comment.author}
+      <br/>
+      {comment.body}
+      {comment.created_at}
+      <br/>
+      {comment.votes}
+    </div>
     )
   }
 
