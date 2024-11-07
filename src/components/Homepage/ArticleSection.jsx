@@ -4,9 +4,9 @@ import UpvoteButton from "../Sharedcomps/UpvoteButton";
 import CommentsButton from "./CommentsButton";
 import axios from "axios";
 
-function ArticleSection (){
+function ArticleSection ({topic}){
     const [articlesList, setArticlesList] = useState([]);
-    useEffect(()=>{axios.get("https://backend-nc-news-i02g.onrender.com/api/articles")
+    useEffect(()=>{axios.get(`https://backend-nc-news-i02g.onrender.com/api/articles${topic ? `?topic=${topic}` : ""}`)
       .then((responce)=>{
         setArticlesList(responce.data.articles)
       })
