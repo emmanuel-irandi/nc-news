@@ -1,12 +1,12 @@
-import DropDownButton from "../Sharedcomps/DropDownButton"
 import ArticleSection from "./ArticleSection"
+import SortByMenu from "./SortByMenu"
 import Title from "./Title"
 
 function HomePage (){
     return (
       <>
       <Title/>
-      <DropDownButton/>
+      <SortByMenu/>
       <ArticleSection/>
       </>
     )

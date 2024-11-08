@@ -1,10 +1,15 @@
-import SortByOption from "../Homepage/SortByOption"
+import { useState } from "react"
 
-function DropDownButton (){
+
+function DropDownButton ({children,buttonClass}){
+  const [open,setOpen] = useState(false)
     return (
-      <>
-      <SortByOption/>
-      </>
+      <div>
+      <button onClick={()=>setOpen((currentOpen)=>!currentOpen)}>
+        {open ? "˄" : "˅"}
+      </button>
+      {open && children}
+      </div>
     )
   }
 
