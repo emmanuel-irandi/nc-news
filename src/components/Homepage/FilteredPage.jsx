@@ -1,14 +1,14 @@
 import { useParams } from "react-router-dom"
-import DropDownButton from "../Sharedcomps/DropDownButton"
 import ArticleSection from "./ArticleSection"
 import Title from "./Title"
+import SortByMenu from "./SortByMenu"
 
 function FilteredPage (){
   const {topic} = useParams()
     return (
       <>
       <Title topic={topic}/>
-      <DropDownButton/>
+      <SortByMenu/>
       <ArticleSection topic={topic}/>
       </>
     )

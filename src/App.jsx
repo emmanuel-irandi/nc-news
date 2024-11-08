@@ -15,6 +15,7 @@ function App() {
       <Route path="/" element={<HomePage/>}/>
       <Route path="/:topic" element={<FilteredPage/>}/>
       <Route path="/article/:article" element={<ArticlePage/>}/>
+      <Route path="*" element={<h1 style={{fontSize : "6em"}}>404 not found</h1>}/>
     </Routes>
     </UserProvider>
   )
