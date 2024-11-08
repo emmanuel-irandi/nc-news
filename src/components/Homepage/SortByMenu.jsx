@@ -4,8 +4,8 @@ import SortByOption from "./SortByOption"
 import { useSearchParams } from "react-router-dom";
 
 function SortByMenu (){
-    const [order,setOrder] = useState(false)
     const [queries,setQueries] = useSearchParams();
+    const [order,setOrder] = useState(queries.get("order")==="ASC")
     return (
         <>
         <DropDownButton>

@@ -1,8 +1,24 @@
-# React + Vite
+# NC News site. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A website containing articles from my backend API, you can sort them using sort options and filter by topic.
 
-Currently, two official plugins are available:
+Use the navigation menu to select a topic. You will be logged in as a random user from a list of default users,
+you can comment on & like posts, as well as delete comments that belong to you. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You need v20.18.0 of node.js to run my site.
+
+To install my app, run these commands:
+
+``
+git clone https://github.com/emmanuel-irandi/nc-news
+``
+
+``
+cd nc-news
+``
+
+``
+npm run dev
+``
+
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)

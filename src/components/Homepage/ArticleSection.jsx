@@ -16,7 +16,7 @@ function ArticleSection ({topic}){
         console.log("my console log from my CATCH.",error)
         setErr("No articles found for this topic.")
       })
-    })
+    },[])
     useEffect(()=>{
       setArticlesList((currentList)=>{
         const newArticles = [...currentList].sort((a,b)=>{
@@ -28,7 +28,6 @@ function ArticleSection ({topic}){
     return err ? <h1 style={{fontSize : "4em"}}>{err}</h1> : (
       <>
       {articlesList.map((article)=>{
-        console.log(Math.random()*100)
         return (
           <div key={article.article_id}>
           <PostInfo article={article}/>
