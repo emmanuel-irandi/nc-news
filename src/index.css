@@ -1,1 +1,66 @@
+.main-page-article{
+    width: 45%;
+    margin: auto;
+}
 
+@media(max-width : 786px) {
+    .main-page-article{
+        width: 75%;
+    }
+}
+
+.main-page-article hr{
+    height: 2px;
+    border: none;
+    background-color: rgb(168, 166, 166);
+}
+
+.article {
+    color: black;
+}
+
+.article .body{
+    margin: auto;
+    padding: 0.5em;
+    background-color: rgb(255, 255, 255);
+    border: 5px solid white;
+    border-radius: 40px;
+}
+
+.article .body:hover{
+    background-color: #c7d5dd;
+    border: 5px solid #c7d5dd;
+}
+
+.article .body img{
+    width: 90%;
+    margin: auto;
+    padding: 5%;
+    border-radius: 30px;
+}
+
+.article .body .header-bar{
+    color: gray;
+}
+
+.upvote-button{
+    background-color: gainsboro;
+    border-radius: 8px;
+    color: black;
+    width: 8%;
+    cursor: pointer;
+    border-style: none;
+}
+
+.upvote-button:hover{
+    background-color: aqua;
+}
+
+.avatar{
+    float: right;
+}
+
+.username{
+    float: right;
+    clear: right;
+}

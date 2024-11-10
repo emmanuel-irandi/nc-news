@@ -7,8 +7,8 @@ function UserContainer (){
     const {user,setUser} = useContext(userContext)
     return (
         <span>
-        <img src={user.avatar_url} alt="profile picture" height={40}/>
-        <h3>{user.username}</h3>
+        <img src={user.avatar_url} alt="profile picture" height={40} className="avatar"/>
+        <h3 className="username">{user.username}</h3>
         </span>
     )
 }

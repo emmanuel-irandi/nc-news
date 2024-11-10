@@ -19,7 +19,7 @@ function UpvoteButton ({articleId,votes}){
   }
     return (
       <>
-     <button onClick={upVote}>
+     <button onClick={upVote} className="upvote-button">
       {count}
      </button>
       {err ? <p>{err}</p> : null}

@@ -29,9 +29,10 @@ function ArticleSection ({topic}){
       <>
       {articlesList.map((article)=>{
         return (
-          <div key={article.article_id}>
+          <div key={article.article_id} className="main-page-article">
           <PostInfo article={article}/>
           <UpvoteButton articleId={article.article_id} votes={article.votes}/>
+          <hr />
           </div>
         )
       })}
